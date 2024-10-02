@@ -1,4 +1,7 @@
 @echo off
+echo ********************************
+echo ***** Build.cmd is running *****
+echo ********************************
 set "CURRENT_SCRIPT_DIR=%~dp0"
 set "BUILD_FOLDER=%CURRENT_SCRIPT_DIR%/build"
 set "SRC_FOLDER=%CURRENT_SCRIPT_DIR%/src"
@@ -14,11 +17,9 @@ if exist "%BUILD_FOLDER%" (
 PUSHD "%BUILD_FOLDER%"
 
 echo Building project in configuration %CONFIG%...
-cmake -S "%SRC_FOLDER%" -B "%BUILD_FOLDER%"
-cmake --build "%SRC_FOLDER%" --config %CONFIG%
+cmake "%SRC_FOLDER%"
+cmake --build "%BUILD_FOLDER%" --config %CONFIG%
 
 POPD
 
-
-@echo on
 exit /B 0
