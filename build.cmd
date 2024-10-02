@@ -3,8 +3,8 @@ echo ********************************
 echo ***** Build.cmd is running *****
 echo ********************************
 set "CURRENT_SCRIPT_DIR=%~dp0"
-set "BUILD_FOLDER=%CURRENT_SCRIPT_DIR%/build"
-set "SRC_FOLDER=%CURRENT_SCRIPT_DIR%/src"
+set "BUILD_FOLDER=%CURRENT_SCRIPT_DIR%\build"
+set "SRC_FOLDER=%CURRENT_SCRIPT_DIR%\src"
 set "CONFIG=Debug"
 
 if exist "%BUILD_FOLDER%" (
