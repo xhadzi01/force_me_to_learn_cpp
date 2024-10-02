@@ -3,3 +3,6 @@
 [dD]ebug
 [rR]elease
 *.sln*
+
+# editor files
+*.swp
