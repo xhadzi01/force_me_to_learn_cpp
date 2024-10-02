@@ -1,0 +1,5 @@
+# build directories
+[bB]uild
+[dD]ebug
+[rR]elease
+*.sln*
