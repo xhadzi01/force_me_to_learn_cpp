@@ -3,6 +3,7 @@
 [dD]ebug
 [rR]elease
 *.sln*
+.vscode/
 
 # editor files
 *.swp
