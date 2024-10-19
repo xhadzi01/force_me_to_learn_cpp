@@ -2,6 +2,15 @@
 
 #include "DataLoader.h"
 
+void check_result(const std::string& your_response, const std::string& expected_response)
+{
+	if (your_response == expected_response) {
+		std::cout<<"Correct!"<<std::endl;	
+	} else {
+		std::cout<<"Wrong! Expected: "<<expected_response<<std::endl;
+	}
+}
+
 void main_loop(const DataLoader& loader)
 {
 	std::string read_word;
@@ -15,7 +24,7 @@ void main_loop(const DataLoader& loader)
 		Translation translation = translation_res.value();
 		std::cout<<"To translate: '"<<translation[LanguagesEnum::Slovak]<<"'"<<std::endl;
 		if (std::cin>>read_word) {
-			std::cout<<"You have written:"<<read_word<<std::endl;
+			check_result(read_word, translation[LanguagesEnum::English]);
 		} else {
 			return;
 		}
