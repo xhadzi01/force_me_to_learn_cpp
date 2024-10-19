@@ -6,11 +6,13 @@ project(force_me_to_learn)
 set(force_me_to_learn_header
 	Result.h
 	Translation.h
+	CSVUtils.h
 	DataLoader.h
 )
 
 set(force_me_to_learn_sources
 	main.cpp
+	CSVUtils.cpp
 	DataLoader.cpp
 )
 

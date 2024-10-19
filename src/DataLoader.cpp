@@ -1,5 +1,9 @@
 #include <random>
+#include <iostream>
+#include <fstream>
+#include <iterator>
 #include "DataLoader.h"
+#include "CSVUtils.h"
 
 struct DataLoader::Randomizer final
 {
@@ -26,13 +30,12 @@ DataLoader::~DataLoader() = default;
 
 auto DataLoader::load(const std::string& path) -> ResultError
 {
-	data = {
-		{"AAA1", "AAA2", "AAA3"},
-		{"BBB1", "BBB2", "BBB3"},
-		{"CCC1", "CCC2", "CCC3"},
-		{"DDD1", "DDD2", "DDD3"},
-		{"EEE1", "EEE2", "EEE3"},
-	};
+	const auto loaded_data = load_csv(path);
+	if (!loaded_data.is_valid()) {
+		return loaded_data.error();
+	}
+
+	data = loaded_data.value();
 	randomizer = std::make_shared<Randomizer>(data.size());
 	return std::nullopt;
 }
