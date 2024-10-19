@@ -10,10 +10,9 @@ set "CONFIG=Debug"
 if exist "%BUILD_FOLDER%" (
 	echo Recreating build folder
 	rmdir /S /Q "%BUILD_FOLDER%"
-	mkdir "%BUILD_FOLDER%"
 )
 
-
+mkdir "%BUILD_FOLDER%"
 PUSHD "%BUILD_FOLDER%"
 
 echo Building project in configuration %CONFIG%...
